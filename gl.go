@@ -55,7 +55,7 @@ func ReadPixels(x int, y int, w int, h int) image.Image {
 	rgba := image.NewRGBA64(rec)
 	for i := 0; i < w*h; i++ {
 		c := color.RGBA64{data[4*i], data[4*i+1], data[4*i+2], data[4*i+3]}
-		rgba.Set(i%w, h-i/w, c)
+		rgba.Set(i%w, h-i/w-1, c)
 	}
 	return rgba
 }
